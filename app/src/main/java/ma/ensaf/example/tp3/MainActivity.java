@@ -71,6 +71,9 @@ public class MainActivity extends AppCompatActivity {
                     return true;
                 } else if (itemId == R.id.login) {
                     Toast.makeText(getApplicationContext(), "Vous avez cliqué sur login", Toast.LENGTH_SHORT).show();
+
+                    Intent intent = new Intent(MainActivity.this, FirebaseAuthentification.class);
+                    startActivity(intent);
                     return true;
                 } else if (itemId == R.id.google_map) {
                     Toast.makeText(getApplicationContext(), "Vous avez cliqué sur profile", Toast.LENGTH_SHORT).show();

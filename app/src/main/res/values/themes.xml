@@ -23,4 +23,9 @@
         <item name="android:textSize">25dp</item>
         <item name="android:layout_margin">10dp</item>
     </style>
+
+    <style name="input_backgound">
+        <item name="cornerRadius">5dp</item>
+        <item name="background">@drawable/input_bg</item>
+    </style>
 </resources>

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "241506455876",
+    "project_id": "tp3-authentification",
+    "storage_bucket": "tp3-authentification.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:241506455876:android:aa37b10ada3f865d508711",
+        "android_client_info": {
+          "package_name": "ma.ensaf.example.tp3"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAx5Vx2b1JYCgT59tHwvVY_rHIcLP0lAd0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
