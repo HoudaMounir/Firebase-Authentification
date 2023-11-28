@@ -12,13 +12,21 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.Firebase;
+import com.google.firebase.auth.FirebaseAuth;
+
+import java.net.Authenticator;
 
 public class MainActivity extends AppCompatActivity {
 
     DrawerLayout drawerLayout;
     NavigationView navigationView;
     ActionBarDrawerToggle drawerToggle;
+
+    FirebaseAuth mAuth;
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
@@ -41,8 +49,8 @@ public class MainActivity extends AppCompatActivity {
         MenuItem loginItem = menu.findItem(R.id.login);
         MenuItem logoutItem = menu.findItem(R.id.logout);
 
-        loginItem.setVisible(true);
-        logoutItem.setVisible(false);
+        loginItem.setVisible(false);
+        logoutItem.setVisible(true);
 
         drawerToggle =new ActionBarDrawerToggle(this, drawerLayout,R.string.open, R.string.close);
         drawerLayout.addDrawerListener(drawerToggle);
@@ -50,6 +58,7 @@ public class MainActivity extends AppCompatActivity {
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+        mAuth = FirebaseAuth.getInstance();
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -58,7 +67,6 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "Vous avez cliqué sur Home", Toast.LENGTH_SHORT).show();
                     return true;
                 } else if (itemId == R.id.calculator) {
-                    Toast.makeText(getApplicationContext(), "Vous avez cliqué sur calculator", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(MainActivity.this, calculatriceActivity.class);
                     startActivity(intent);
 
@@ -69,17 +77,17 @@ public class MainActivity extends AppCompatActivity {
                 } else if (itemId == R.id.chat) {
                     Toast.makeText(getApplicationContext(), "Vous avez cliqué sur chat", Toast.LENGTH_SHORT).show();
                     return true;
-                } else if (itemId == R.id.login) {
-                    Toast.makeText(getApplicationContext(), "Vous avez cliqué sur login", Toast.LENGTH_SHORT).show();
-
-                    Intent intent = new Intent(MainActivity.this, FirebaseAuthentification.class);
+                } else if (itemId == R.id.google_map) {
+                    Intent intent = new Intent(MainActivity.this, GoogleMapActivity.class);
                     startActivity(intent);
                     return true;
-                } else if (itemId == R.id.google_map) {
-                    Toast.makeText(getApplicationContext(), "Vous avez cliqué sur profile", Toast.LENGTH_SHORT).show();
-                    return true;
                 } else if (itemId == R.id.logout) {
-                    Toast.makeText(getApplicationContext(), "Vous avez cliqué sur logout", Toast.LENGTH_SHORT).show();
+                    if (mAuth.getCurrentUser() != null) {
+                        mAuth.signOut();
+
+                        Intent intent = new Intent(MainActivity.this, FirebaseAuthentification.class);
+                        startActivity(intent);
+                    }
                     return true;
                 } else if (itemId == R.id.share) {
                     Toast.makeText(getApplicationContext(), "Vous avez cliqué sur share", Toast.LENGTH_SHORT).show();

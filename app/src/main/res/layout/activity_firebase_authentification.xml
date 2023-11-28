@@ -32,18 +32,19 @@
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.805" />
+        app:layout_constraintVertical_bias="0.852" />
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/imageView2"
         android:layout_width="34dp"
         android:layout_height="29dp"
         android:layout_marginEnd="248dp"
-        app:layout_constraintBottom_toBottomOf="@+id/signInWithGoogle"
-        app:layout_constraintEnd_toEndOf="@+id/signInWithGoogle"
-        app:layout_constraintTop_toTopOf="@+id/signInWithGoogle"
+        android:paddingRight="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/signInWithFacebook"
+        app:layout_constraintEnd_toEndOf="@+id/signInWithFacebook"
+        app:layout_constraintTop_toTopOf="@+id/signInWithFacebook"
         app:layout_constraintVertical_bias="0.526"
-        app:srcCompat="@drawable/google" />
+        app:srcCompat="@drawable/fb" />
 
     <TextView
         android:id="@+id/signInWithFacebook"
@@ -58,26 +59,25 @@
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.897" />
+        app:layout_constraintVertical_bias="0.944" />
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/imageView"
         android:layout_width="34dp"
         android:layout_height="29dp"
         android:layout_marginEnd="248dp"
-        android:paddingRight="8dp"
-        app:layout_constraintBottom_toBottomOf="@+id/signInWithFacebook"
-        app:layout_constraintEnd_toEndOf="@+id/signInWithFacebook"
-        app:layout_constraintTop_toTopOf="@+id/signInWithFacebook"
+        app:layout_constraintBottom_toBottomOf="@+id/signInWithGoogle"
+        app:layout_constraintEnd_toEndOf="@+id/signInWithGoogle"
+        app:layout_constraintTop_toTopOf="@+id/signInWithGoogle"
         app:layout_constraintVertical_bias="0.526"
-        app:srcCompat="@drawable/fb" />
+        app:srcCompat="@drawable/google" />
 
     <EditText
         android:id="@+id/inputEmail"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="48dp"
         android:layout_marginEnd="24dp"
         android:background="@drawable/input_bg"
         android:drawableLeft="@drawable/baseline_email_24"

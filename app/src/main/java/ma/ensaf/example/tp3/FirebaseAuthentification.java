@@ -30,7 +30,6 @@ import com.google.firebase.auth.GoogleAuthProvider;
 public class FirebaseAuthentification extends AppCompatActivity {
     private TextView textView;
     TextView createNewAccount;
-
     EditText inputEmail, inputPassword;
     Button btnLogin;
     String emailPattern ="[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
@@ -81,6 +80,7 @@ public class FirebaseAuthentification extends AppCompatActivity {
                 startActivityForResult(i, 1234);
             }
         });
+
     }
 
     private void PerforLofin() {
@@ -152,12 +152,12 @@ public class FirebaseAuthentification extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-        if (user != null) {
-            FirebaseAuth.getInstance().signOut();
-            Intent intent = new Intent(this, MainActivity.class);
-            startActivity(intent);
-            finish();
-        }
+        //FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        //if (user != null) {
+            //FirebaseAuth.getInstance().signOut();
+            //Intent intent = new Intent(this, MainActivity.class);
+            //startActivity(intent);
+            //finish();
+        //}
     }
 }
