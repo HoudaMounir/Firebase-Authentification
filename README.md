@@ -2,7 +2,8 @@
 
 ![logoAppTp3](https://github.com/HoudaMounir/TP-3/assets/122269840/9c48b390-1c9b-4204-b984-872d392dfb02)
 
-Login/Sign Up Activities
+#### Login/Sign Up Activities :
+
 ![LoginSignUp](https://github.com/HoudaMounir/TP-3/assets/122269840/d1d3a54e-42b9-4e44-bcb8-efc5a2b92dcb)
 
 Authentification par Google/Github Activities
